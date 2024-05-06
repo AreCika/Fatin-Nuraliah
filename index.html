@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      href="./beauty-icon.png"
+      rel="icon"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      href="./phone-39-32.png"
+      rel="icon"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Raleway", sans-serif;
+      }
+      .w3-quarter img {
+        margin-bottom: -6px;
+        cursor: pointer;
+      }
+      .w3-quarter img:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body class="w3-light-grey">
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large"
+      style="
+        z-index: 3;
+        width: 250px;
+        font-weight: bold;
+        display: none;
+        right: 0;
+      "
+      id="mySidebar"
+    >
+      <a
+        href="#"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-center w3-padding-16"
+        >PORTFOLIO</a
+      >
+      <a
+        href="#about"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-center w3-padding-16"
+        >ABOUT ME</a
+      >
+      <a
+        href="#Education"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-center w3-padding-16"
+        >EDUCATION</a
+      >
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+      <span class="w3-left w3-padding">FATIN NURALIAH</span>
+      <a
+        href="javascript:void(0)"
+        class="w3-right w3-button w3-white"
+        onclick="w3_open()"
+        >☰</a
+      >
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-animate-opacity"
+      onclick="w3_close()"
+      style="cursor: pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main w3-content" style="max-width: 1600px; margin-top: 83px">
+      <!-- Photo grid -->
+      <div class="w3-row w3">
+        <div class="w3-quarter">
+          <img
+            src="./Pic 2.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="Thinking About You"
+          />
+          <img
+            src="./Pic 3.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="Trust to Allah"
+          />
+          <img
+            src="./Pic 4.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="Perfect Person doesn’t exist"
+          />
+        </div>
+
+        <div class="w3-quarter">
+          <img
+            src="./Pic 5.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="A girl loves to play"
+          />
+          <img
+            src="./Pic 6.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="Ice Chocolate My Favourite Drink"
+          />
+          <img
+            src="./Pic 7.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="Gymnastics is a Great Sport!"
+          />
+        </div>
+
+        <div class="w3-quarter">
+          <img
+            src="./Pic 8.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="Find a Guy that treat you like your Dad does"
+          />
+          <img
+            src="./Pic 9.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="I am Beautiful"
+          />
+          <img
+            src="./Pic 10.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="A Good Teacher is my Vision"
+          />
+        </div>
+
+        <div class="w3-quarter">
+          <img
+            src="./Pic 11.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="Teacher are stronger than you Expected"
+          />
+          <img
+            src="./Pic 12.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="A candle that light the others"
+          />
+          <img
+            src="./Pic 13.jpg"
+            style="width: 100%; height: 550px"
+            onclick="onClick(this)"
+            alt="Cold, But Beautiful"
+          />
+        </div>
+      </div>
+
+      <!-- Modal for full size images on click-->
+      <div
+        id="modal01"
+        class="w3-modal w3-black"
+        style="padding-top: 0"
+        onclick="this.style.display='none'"
+      >
+        <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+        <div
+          class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64"
+        >
+          <img id="img01" class="w3-image" />
+          <p id="caption"></p>
+        </div>
+      </div>
+
+      <!-- About section -->
+      <div
+        class="w3-container w3-center w3-text-black w3-padding-32"
+        id="about"
+        style="background-color: pink"
+      >
+        <h4><b>About Me</b></h4>
+        <img
+          src="./Pic 1.jpg"
+          alt="Me"
+          class="w3-image w3-padding-32 w3-round"
+          width="500"
+          height="550"
+        />
+        <div class="w3-content w3-justify" style="max-width: 600px">
+          <h4>Fatin Nuraliah Binti Abdul Aziz</h4>
+          <p>
+            As a dedicated student at Institut Pendidikan Guru pursuing a degree
+            in Teaching English as a Second Language (TESL), I am passionately
+            committed to shaping the future of education. With a fervent desire
+            to inspire young minds, I aspire to become an elementary school
+            teacher, instilling a love for learning and fostering creativity in
+            my students. Through my studies, I aim to equip myself with the
+            knowledge and skills necessary to create engaging and inclusive
+            learning environments where every child feels valued and empowered
+            to reach their full potential. With a blend of enthusiasm, empathy,
+            and determination, I am poised to make a meaningful impact in the
+            lives of the next generation.
+          </p>
+          <p>tel: +60 11-3515-1417</p>
+          <hr class="w3-opacity" />
+          <h4 class="w3-padding-16">Professional Skills</h4>
+          <p class="w3-wide">Lesson Planning</p>
+          <div class="w3-white">
+            <div
+              class="w3-container w3-padding-small w3-center"
+              style="width: 95%; background-color: #98ff98"
+            >
+              95%
+            </div>
+          </div>
+          <p class="w3-wide">Classroom Management</p>
+          <div class="w3-white">
+            <div
+              class="w3-container w3-padding-small w3-center"
+              style="width: 85%; background-color: #98ff98"
+            >
+              85%
+            </div>
+          </div>
+          <p class="w3-wide">Accuracy & Attention to Detail</p>
+          <div class="w3-white">
+            <div
+              class="w3-container w3-padding-small w3-center"
+              style="width: 90%; background-color: #98ff98"
+            >
+              90%
+            </div>
+          </div>
+          <p class="w3-wide">Active Listening</p>
+          <div class="w3-white">
+            <div
+              class="w3-container w3-padding-small w3-center"
+              style="width: 80%; background-color: #98ff98"
+            >
+              75%
+            </div>
+          </div>
+          <p class="w3-wide">Differentiated Instruction</p>
+          <div class="w3-white">
+            <div
+              class="w3-container w3-padding-small w3-center"
+              style="width: 80%; background-color: #98ff98"
+            >
+              80%
+            </div>
+          </div>
+          <p class="w3-wide">Positive Attitude</p>
+          <div class="w3-white">
+            <div
+              class="w3-container w3-padding-small w3-center"
+              style="width: 100%; background-color: #98ff98"
+            >
+              100%
+            </div>
+          </div>
+          <hr class="w3-opacity" />
+
+          <h4 class="w3-padding-16">What I believe</h4>
+          <div class="w3-row-padding" style="margin: 0 -16px">
+            <div class="w3-half w3-margin-bottom">
+              <ul class="w3-ul w3-white w3-center">
+                <li class="w3-black w3-xlarge w3-padding-32">Quotes</li>
+                <li class="w3-padding-16">
+                  <h3>
+                    “Don’t love the one who doesn’t love to Allah. If they can
+                    leave Allah, they will leave you.”
+                  </h3>
+                </li>
+                <li class="w3-padding-16">
+                  <h4>Imam Ash-Shafi’i</h4>
+                  <span class="w3-opacity">Author</span>
+                </li>
+                <li class="w3-light-grey w3-padding-24">
+                  <a
+                    href="https://ms.wikipedia.org/wiki/Muhammad_bin_Idris_al-Syafii"
+                    ><button class="w3-button w3-white w3-padding-large">
+                      Author Wiki
+                    </button></a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="w3-half">
+              <ul class="w3-ul w3-white w3-center">
+                <li class="w3-black w3-xlarge w3-padding-32">Quotes</li>
+                <li class="w3-padding-32">
+                  <h3>
+                    "It's the teacher that makes the difference, not the
+                    classroom."
+                  </h3>
+                </li>
+                <li class="w3-padding-16">
+                  <h4>John Strachan</h4>
+                  <span class="w3-opacity">Author</span>
+                </li>
+                <li class="w3-light-grey w3-padding-24">
+                  <a href="https://en.wikipedia.org/wiki/John_Strachan"
+                    ><button class="w3-button w3-white w3-padding-large">
+                      Author Wiki
+                    </button></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education section -->
+      <div class="w3-row w3-padding-64" id="Education">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+          <img
+            src="./ipg bangi.jpg"
+            class="w3-round w3-image"
+            alt="Table Setting"
+            width="700"
+            height="750"
+            style="padding-top: 40px"
+          />
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+          <h1 class="w3-center">Education</h1>
+          <br />
+          <h5 class="w3-center">
+            Institut Pendidikan Guru Kampus Pendidikan Islam <br />
+            2020 - 2025
+          </h5>
+          <p class="w3-large w3-justify w3-center">
+            Bachelor of Education (Hons) in Teaching English as a Second
+            Language (TESL)
+          </p>
+          <p class="w3-large w3-justify" style="padding-right: 10px">
+            As a TESL (Teaching English as a Second Language) student, I am
+            currently engaged in a rigorous program that equips me with both
+            theoretical and practical tools necessary for effective language
+            instruction. My studies focus on linguistics, pedagogy, curriculum
+            development, and cultural sensitivity, ensuring I can effectively
+            teach English to non-native speakers. This education not only
+            sharpens my teaching abilities but also deepens my understanding of
+            the complexities involved in language acquisition. Through hands-on
+            teaching practicums and diverse classroom simulations, I am gaining
+            the experience needed to meet the challenges of a dynamic
+            educational environment and make a significant impact on my future
+            students' language learning journeys
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="w3-container w3-padding-32" style="background-color: pink">
+        <div class="w3-row-padding">
+          <div class="w3-third">
+            <h3>Let's Connect</h3>
+            <p>
+              I'm excited to share my portfolio with you and invite you to
+              explore my work and achievements. Whether you're a fellow
+              educator, student, or enthusiast of lifelong learning, I'd love to
+              connect and collaborate. Feel free to reach out to me via
+              <a href="#about">Phone Number</a> let's embark on this educational
+              journey together
+            </p>
+          </div>
+
+          <div class="w3-third">
+            <h3>Blog Post</h3>
+            <ul class="w3-ul">
+              <a href="https://www.primarypunch.com/search?max-results=10"
+                ><li class="w3-padding-16 w3-hover-black">
+                  <img
+                    src="./primary punch logo.png"
+                    class="w3-left w3-margin-right"
+                    style="width: 50px"
+                  />
+                  <span class="w3-large">Primary Punch</span><br />
+                  <span
+                    >Blogspot of a Teacher teaching in Elementary School</span
+                  >
+                </li></a
+              >
+              <a
+                href="https://www.weareteachers.com/back-to-school-prep-for-april/"
+                ><li class="w3-padding-16 w3-hover-black">
+                  <img
+                    src="./back to school logo.jpg"
+                    class="w3-left w3-margin-right"
+                    style="width: 50px"
+                  />
+                  <span class="w3-large">Back To School</span><br />
+                  <span>Tips for Students Back to School after Holiday</span>
+                </li></a
+              >
+            </ul>
+          </div>
+
+          <div class="w3-third">
+            <h3>POPULAR TAGS</h3>
+            <p>
+              <span class="w3-tag w3-black w3-margin-bottom">Education</span>
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+                >Selangor</span
+              >
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+                >Kuala Lumpur</span
+              >
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+                >Elementary</span
+              >
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+                >Malaysia</span
+              >
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+                >DIY</span
+              >
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+                >Ideas</span
+              >
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+                >School</span
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- End page content -->
+    </div>
+
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+      }
+    </script>
+  </body>
+</html>
